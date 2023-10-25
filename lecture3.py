@@ -75,7 +75,8 @@ class CurrencyConverter:
 
     def add_rate(self, source_currency, target_currency, rate):
         # Add or update a conversion rate for a currency pair.
-        self.rates[(source_currency, target_currency)] = rate
+        key = (source_currency, target_currency)
+        self.rates[key] = rate
 
     def convert(self, amount, source_currency, target_currency):
         # Convert an amount from the source currency to the target currency.
